@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header>首页</el-header>
+        <el-main>
+            <@ .LayoutContent @>
+        </el-main>
+    </el-container>
+
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    const RootApp = {
+        setup() {
+            const msg = "母版页"
+            return {
+                msg
+            };
+        }
+    }
+    const app = Vue.createApp(RootApp)
+    app.use(ElementPlus);
+    const vm =  app.mount('#app')
+</script>
+<@ .Scripts @>
+</body>
+</html>
