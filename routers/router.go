@@ -31,5 +31,9 @@ func init() {
 	beego.AddNamespace(ns)
 	//endregion
 
+	//#region session
+	beego.Router("/session", &controllers.SessionController{}, "get:Get;post:Post")
+	//#endregion
+
 	//
 }
