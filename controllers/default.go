@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/core/logs"
 	"time"
 )
 
@@ -10,6 +11,8 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
+	time := time.Now()
+	logs.Error("错误信息", time)
 	c.Data["Website"] = "beego.me"
 	c.Data["Email"] = "867824092@gmail.com"
 	c.TplName = "index.tpl"

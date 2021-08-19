@@ -1,7 +1,9 @@
 package routers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/context"
 	"go_web/controllers"
 )
 
@@ -35,5 +37,11 @@ func init() {
 	beego.Router("/session", &controllers.SessionController{}, "get:Get;post:Post")
 	//#endregion
 
+	//region filter
+	beego.InsertFilter("/filter", beego.BeforeExec, func(context *context.Context) {
+		fmt.Println("ActionExec Filter Execute")
+	})
+	beego.Router("/filter", &controllers.FilterController{})
+	//endregion
 	//
 }
