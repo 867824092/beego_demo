@@ -43,5 +43,12 @@ func init() {
 	})
 	beego.Router("/filter", &controllers.FilterController{})
 	//endregion
-	//
+
+	//region orm
+	orm := beego.NewNamespace("orm",
+		beego.NSRouter("/:id", &controllers.UserOrmController{}, "get:Get"),
+		beego.NSRouter("/migration", &controllers.UserOrmController{}, "get:Migrate"),
+	)
+	beego.AddNamespace(orm)
+	//endregion
 }

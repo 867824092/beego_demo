@@ -8,4 +8,6 @@ require (
 	github.com/beego/beego/v2 v2.0.1
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/smartystreets/goconvey v1.6.4
+	gorm.io/driver/sqlite v1.1.4
+	gorm.io/gorm v1.21.13
 )
